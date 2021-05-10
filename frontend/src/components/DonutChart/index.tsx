@@ -9,7 +9,7 @@ type ChartData = {
     series: number[];
 }
 
-const DonutChart = () => {
+function DonutChart() {
 
     const [chartData, setChartData] = useState<ChartData>({ labels: [], series: [] });
 
@@ -22,13 +22,14 @@ const DonutChart = () => {
 
                 setChartData({ labels: myLabels, series: mySeries });
             });
-    }, [])   
+    }, []);
 
     const options = {
         legend: {
             show: true
         }
     }
+
     return (
         <Chart
             options={{ ...options, labels: chartData.labels }}
